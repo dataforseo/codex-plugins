@@ -7,7 +7,7 @@
     "url": "https://dataforseo.com"
   },
   "homepage": "https://dataforseo.com",
-  "repository": "https://github.com/dataforseo/llm-plugins",
+  "repository": "https://github.com/dataforseo/codex-plugins",
   "license": "Apache-2.0",
   "keywords": [
     "dataforseo",
@@ -20,10 +20,10 @@
   "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "DataForSEO",
-    "shortDescription": "SEO and search marketing data for Codex",
-    "longDescription": "Analyze keywords, SERPs, competitors, backlinks, content, domains, and market trends with live DataForSEO data directly from Codex.",
+    "shortDescription": "SEO analysis with live data",
+    "longDescription": "Turn live search and web data into actionable SEO and marketing analysis across locations, languages, devices, and search engines.\n\nAPI coverage:\n- SERP API: rankings, organic and paid results, SERP features, and AI Overviews.\n- AI Optimization API: AI-search visibility, mentions, citations, and LLM responses.\n- DataForSEO Labs API: keyword discovery, competitor research, search intent, clustering, and historical trends.\n- Keywords Data API: search volume, CPC, competition, Google Ads, and trend data.\n- Domain Analytics API: domain technologies, traffic, and WHOIS intelligence.\n- OnPage API: technical SEO audits, website crawling, Lighthouse, and content parsing.\n- Backlinks API: backlinks, referring domains, anchors, competitors, and new or lost links.\n- Content Analysis API: content discovery, sentiment, citations, and market analysis.\n- Business Data API: local businesses, listings, reviews, and location-based research.\n- Merchant API: products, sellers, prices, Google Shopping, and Amazon data.\n- App Data API: mobile app discovery, rankings, reviews, and market intelligence.\n- Databases: bulk datasets for large-scale and recurring analysis.\n\nUse these data sources in Codex for SEO research, competitive intelligence, audits, reporting, content strategy, local search, and e-commerce analysis.",
     "developerName": "DataForSEO",
-    "category": "Marketing & SEO",
+    "category": "Data & Analytics",
     "capabilities": [
       "Research",
       "Data Analysis"
