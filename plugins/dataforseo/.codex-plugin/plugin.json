@@ -1,0 +1,43 @@
+{
+  "name": "dataforseo",
+  "version": "1.0.0",
+  "description": "Run SEO analysis with DataForSEO search, keyword, backlink, content, and market data from Codex.",
+  "author": {
+    "name": "DataForSEO",
+    "url": "https://dataforseo.com"
+  },
+  "homepage": "https://dataforseo.com",
+  "repository": "https://github.com/dataforseo/llm-plugins",
+  "license": "Apache-2.0",
+  "keywords": [
+    "dataforseo",
+    "seo",
+    "search",
+    "marketing",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "DataForSEO",
+    "shortDescription": "SEO and search marketing data for Codex",
+    "longDescription": "Analyze keywords, SERPs, competitors, backlinks, content, domains, and market trends with live DataForSEO data directly from Codex.",
+    "developerName": "DataForSEO",
+    "category": "Marketing & SEO",
+    "capabilities": [
+      "Research",
+      "Data Analysis"
+    ],
+    "websiteURL": "https://dataforseo.com",
+    "privacyPolicyURL": "https://dataforseo.com/privacy-policy",
+    "termsOfServiceURL": "https://dataforseo.com/terms-of-service",
+    "brandColor": "#B2DD4C",
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png",
+    "defaultPrompt": [
+      "Research keywords for my website with DataForSEO.",
+      "Analyze a competitor's organic search performance.",
+      "Find backlink opportunities my competitors have."
+    ]
+  }
+}

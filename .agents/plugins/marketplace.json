@@ -1,0 +1,20 @@
+{
+  "name": "dataforseo",
+  "interface": {
+    "displayName": "DataForSEO"
+  },
+  "plugins": [
+    {
+      "name": "dataforseo",
+      "source": {
+        "source": "local",
+        "path": "./plugins/dataforseo"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Marketing & SEO"
+    }
+  ]
+}
