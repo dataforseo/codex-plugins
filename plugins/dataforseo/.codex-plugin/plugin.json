@@ -21,7 +21,7 @@
   "interface": {
     "displayName": "DataForSEO",
     "shortDescription": "SEO analysis with live data",
-    "longDescription": "Turn live search and web data into actionable SEO and marketing analysis across locations, languages, devices, and search engines.\n\nAPI coverage:\n- SERP API: rankings, organic and paid results, SERP features, and AI Overviews.\n- AI Optimization API: AI-search visibility, mentions, citations, and LLM responses.\n- DataForSEO Labs API: keyword discovery, competitor research, search intent, clustering, and historical trends.\n- Keywords Data API: search volume, CPC, competition, Google Ads, and trend data.\n- Domain Analytics API: domain technologies, traffic, and WHOIS intelligence.\n- OnPage API: technical SEO audits, website crawling, Lighthouse, and content parsing.\n- Backlinks API: backlinks, referring domains, anchors, competitors, and new or lost links.\n- Content Analysis API: content discovery, sentiment, citations, and market analysis.\n- Business Data API: local businesses, listings, reviews, and location-based research.\n- Merchant API: products, sellers, prices, Google Shopping, and Amazon data.\n- App Data API: mobile app discovery, rankings, reviews, and market intelligence.\n- Databases: bulk datasets for large-scale and recurring analysis.\n\nUse these data sources in Codex for SEO research, competitive intelligence, audits, reporting, content strategy, local search, and e-commerce analysis.",
+    "longDescription": "Use live DataForSEO search, keyword, competitor, backlink, technical SEO, local business, and market data for research and analysis in Codex.",
     "developerName": "DataForSEO",
     "category": "Data & Analytics",
     "capabilities": [

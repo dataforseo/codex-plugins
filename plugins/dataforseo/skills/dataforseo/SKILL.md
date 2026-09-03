@@ -1,58 +1,73 @@
 ---
 name: dataforseo
-description: Route SEO, search, keyword, competitor, backlink, on-page, and local-market research to request-ready DataForSEO API workflows.
+description: Research keywords, SERPs, competitors, backlinks, websites, content, local businesses, products, apps, and AI-search visibility with the DataForSEO API. Use for SEO, search, and digital-market analysis in Codex.
 ---
 
 # DataForSEO
 
-Use the DataForSEO MCP server configured by this plugin. Prefer the focused
-skills below; they contain verified endpoint paths and request parameters, so
-routine requests do not need documentation discovery.
+Use the DataForSEO MCP tools to find the correct API endpoint and retrieve
+current SEO and search marketing data.
 
-## Route the request
+## Workflow
 
-- Keyword discovery, metrics, difficulty, intent → `dataforseo-keywords`
-- Organic competitors, rankings, keyword gaps → `dataforseo-competitors`
-- Current Google results and SERP features → `dataforseo-serp`
-- Backlinks, referring domains, link gaps → `dataforseo-backlinks`
-- Page checks and technical site crawls → `dataforseo-onpage`
-- Google Maps business and local-market research → `dataforseo-local-business`
+1. Define the research question, target, market, and desired output.
+2. Select the narrowest suitable endpoint:
+   - If the endpoint path is known, call `docs_search` for it directly.
+   - If only the API area is known, use `docs_index` for that section.
+   - Use `docs_list_sections` only when the API area is unclear.
+3. Use `docs_search` to verify required fields, limits, defaults, and response
+   fields. Request code examples only when they help construct a complex body.
+4. Collect only missing inputs that materially affect the result, such as
+   target, location, language, device, search engine, or date range.
+5. Call `api_request` with the documented method, `/v3/` path, and task data.
+6. Check top-level and task-level status codes before analyzing results.
+7. Paginate only when the requested answer requires more results.
+8. Summarize the findings, methodology, material assumptions, and limitations.
 
-## Fast workflow
+## Request guidance
 
-1. Read the matching focused skill.
-2. Collect only required inputs that cannot be inferred from the request.
-3. Call `api_request` directly with its verified `/v3/` path and a task array
-   in `data`.
-4. Inspect both top-level and task-level status codes before using results.
-5. Summarize findings and state the endpoint, target, location, language,
-   device, and other assumptions that materially affect them.
-
-Do not call `docs_list_sections` or `docs_index` for endpoints covered by the
-focused skills. Use `docs_search` directly with a known path only when:
-
-- no listed endpoint fits the request;
-- a required field or response field is not covered locally; or
-- the API rejects a locally documented parameter.
-
-## Request rules
-
-- POST bodies are arrays of task objects: `data: [{...}]`.
-- Live endpoints normally accept one task per API call; make the smallest
-  billable request that answers the question.
+- Prefer endpoint paths beginning with `/v3/` over manually constructed URLs.
+- Most POST endpoints expect `data` to be an array of task objects:
+  `data: [{...}]`. Follow the endpoint documentation exactly.
 - Keep the default AI-optimized response. Set `noAiMode` to `true` only when
   the user needs fields omitted from the optimized response.
 - Treat live API requests as potentially billable. Avoid duplicate, speculative,
-  broad, or high-limit calls.
-- Leave clickstream data, JavaScript rendering, resource loading, and other
-  paid add-ons disabled unless they are required.
+  unnecessarily broad, high-limit, or repeated polling calls.
+- Prefer one focused request over many exploratory requests. Reuse compatible
+  results instead of calling another endpoint for the same information.
+- Keep optional paid features disabled unless needed, including clickstream
+  data, JavaScript rendering, resource loading, and deeper SERP collection.
+- Preserve identical location, language, device, filters, and rank scales when
+  comparing targets.
+- Use returned pagination tokens when documented; do not guess offsets beyond
+  endpoint limits.
 - Never ask the user to paste access tokens or API passwords into the chat.
 - If an OAuth error occurs, ask the user to reconnect the DataForSEO plugin.
 
+## Target and market rules
+
+- Domains normally omit protocol and `www.`; exact page targets usually require
+  an absolute URL. Follow the selected endpoint's rule.
+- Prefer the user's explicit location and language. Do not assume the United
+  States or English when market choice could change the answer.
+- Do not invent location, language, category, or search-engine codes. Resolve
+  them through the relevant documented endpoint when necessary.
+- Distinguish live SERP data from periodically updated database metrics.
+
+## Response handling
+
+- Treat a successful transport response as insufficient: inspect
+  `status_code`, `status_message`, `tasks_error`, and each task status.
+- Use `tasks[].result` as the analysis source and note missing or partial data.
+- Preserve units, currencies, timestamps, ranking scopes, and estimated versus
+  measured metrics.
+- For long-running tasks, retain the task ID and use the documented result
+  endpoint. Stop polling when complete, failed, or clearly unavailable.
+
 ## Quality checks
 
-- Do not invent endpoint names, request fields, location codes, or language
-  codes. Prefer explicit location names when the user has not supplied a code.
+- Do not invent endpoint names, parameters, filters, or response fields.
 - Distinguish measured API data from estimates or interpretations.
-- Preserve units and timestamps, and explain ambiguous metrics.
-- For comparisons, use consistent endpoint settings across all targets.
+- Explain ambiguous metrics and avoid presenting correlation as causation.
+- Report the endpoint, target, market settings, device, date range, limits, and
+  filters when they materially affect reproducibility.
